@@ -1,0 +1,40 @@
+const express=require("express")
+const cors=require('cors')
+const jwt=require("jsonwebtoken")
+const app=express();
+require('dotenv').config();
+
+const port=process.env.PORT;
+const jwtpass=process.env.JWT_TOKEN_PASS
+
+app.use(cors({
+    origin:"*", 
+    methods:['POST']
+}))
+app.use(express.json())
+
+
+app.post('/login',(req,res)=>{
+    const {email,password}=req.body;
+    if(!email || !password){
+        return res.send({message:"email and password must required"})
+    }
+    let UserRole="";
+    if(email=="sundar@gmail.com" && password=="1234"){
+       UserRole="admin"
+    }
+    else if(email=="kandan@gmail.com" && password=="123"){
+        UserRole="Staff"
+    }
+    else{
+        return res.send({message:"password is invalid"})
+    }
+
+    const bodyJWT={email,UserRole}
+    const token=jwt.sign(bodyJWT,jwtpass,{expiresIn:"1h"})
+    res.send({message:"Login successfull",token})
+})
+
+app.listen(port,()=>{
+    console.log("app is running port at "+port)
+})
