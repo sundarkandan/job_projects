@@ -35,6 +35,6 @@ app.post('/login',(req,res)=>{
     res.send({message:"Login successfull",token})
 })
 
-app.listen(port,()=>{
-    console.log("app is running port at "+port)
-})
+
+
+module.exports = app;
