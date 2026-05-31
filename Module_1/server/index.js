@@ -4,8 +4,8 @@ const jwt=require("jsonwebtoken")
 const app=express();
 require('dotenv').config();
 
-const port=process.env.PORT;
-const jwtpass=process.env.JWT_TOKEN_PASS
+const port=3000;
+const jwtpass=helloworldfromsundar
 
 app.use(cors({
     origin:"*", 
