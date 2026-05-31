@@ -4,7 +4,7 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 function Login(){
-  const Server = import.meta.env.VITE_API_URL;
+  const Server = "http://localhost:3000";
   const [user,setUser]=useState({})
 
 
