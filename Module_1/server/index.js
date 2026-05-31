@@ -8,7 +8,7 @@ const port=3000;
 const jwtpass="helloworldfromsundar"
 
 app.use(cors({
-    origin:"*", 
+    origin:"https://m2sundar.netlify.app/", 
     methods:['POST']
 }))
 app.use(express.json())
