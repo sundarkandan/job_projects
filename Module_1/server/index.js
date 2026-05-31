@@ -5,7 +5,7 @@ const app=express();
 require('dotenv').config();
 
 const port=3000;
-const jwtpass=helloworldfromsundar
+const jwtpass="helloworldfromsundar"
 
 app.use(cors({
     origin:"*", 
