@@ -4,7 +4,7 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 function Login(){
-  const Server = "https://job-projects.vercel.app/";
+  const Server = "http://localhost:3000";
   const [user,setUser]=useState({})
 
 
